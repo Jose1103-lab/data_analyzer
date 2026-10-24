@@ -58,6 +58,8 @@ def data_formatter( ):
         raw_number = raw_number.replace('.','') # In case of any number greater than 999, removes the '.'
         decimal_point = transaction[3].replace('"',"")
         amount = float(raw_number.replace('$',"") + "." + decimal_point)
+        if amount == 100000: # this eliminates the user's first deposit
+            break
 
         transactions["Date"].append(date_formatter(transaction[0], 1)) 
         transactions["Amount"].append(amount) 
