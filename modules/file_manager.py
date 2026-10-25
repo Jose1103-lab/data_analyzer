@@ -32,7 +32,7 @@ def date_formatter(date, case):
     if case == 1:
         return rdate.strftime("%d-%b-%Y")
     else:
-        return rdate.strftime("-%Y-%b-%d")
+        return rdate.strftime("%Y-%b-%d")
 
 def csv_extractor():
     with open('data/data.csv') as data:
@@ -61,7 +61,7 @@ def data_formatter( ):
         if amount == 100000: # this eliminates the user's first deposit
             break
 
-        transactions["Date"].append(date_formatter(transaction[0], 1)) 
+        transactions["Date"].append(date_formatter(transaction[0], 2)) 
         transactions["Amount"].append(amount) 
         transactions["Status"].append(op_output)
 
