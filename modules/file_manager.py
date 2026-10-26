@@ -64,9 +64,10 @@ def data_formatter( ):
         transactions["Date"].append(date_formatter(transaction[0], 2)) 
         transactions["Amount"].append(amount) 
         transactions["Status"].append(op_output)
-
         #print(f"{op_output} | {amount} | {date_formatter(transactions[0], 1)}")
     
+    transactions["Date"] = pd.to_datetime(transactions["Date"]) #This changes the type to date inside the dataframe
+   
     return transactions
 
 
