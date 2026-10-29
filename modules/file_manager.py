@@ -70,8 +70,6 @@ def data_formatter( ):
    
     return transactions
 
-
-
 # data_formatter(csv_extractor())    
 
 
